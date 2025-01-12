@@ -1,0 +1,19 @@
+# Misc directories
+.svelte-kit
+.vscode
+node_modules
+
+# Misc files
+LICENSE
+README.md
+vite.config.js.timestamp-*
+
+# Git
+.git
+.github
+.gitignore
+
+# Docker
+.dockerignore
+docker-compose.yml
+Dockerfile
