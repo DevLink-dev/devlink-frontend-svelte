@@ -12,19 +12,19 @@
   in
   {
     packages = eachSystem (system: pkgs: rec {
-      default = terralux-frontend;
-      terralux-frontend = pkgs.buildNpmPackage {
-        name = "devlink";
+      default = devlink-frontend-svelte;
+      devlink-frontend-svelte = pkgs.buildNpmPackage {
+        name = "devlink-frontend-svelte";
         src = ./.;
 
-        npmDepsHash = "sha256-kUJa63D5A5gJhiGw5JuowIF1vXfB2Aaaxsmpi2z8E0s=";
+        npmDepsHash = "sha256-kZBP7PGScGrbqAqwOEPqqatcgMILVVzy2/qyKnajdU8=";
 
         # runs `npm run build` by default
 
         installPhase = ''
           mkdir -p $out/bin/src
           cp -r build/* $out/bin/src
-          makeWrapper "${pkgs.nodejs}/bin/node" "$out/bin/terralux-frontend" \
+          makeWrapper "${pkgs.nodejs}/bin/node" "$out/bin/devlink-frontend-svelte" \
             --add-flags "$out/bin/src" \
             --set PORT 4173
         '';
